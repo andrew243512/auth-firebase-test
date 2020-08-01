@@ -1,15 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content class="background">
   <img class="logo" src="../../../assets/img/login.png">
   <div class="title">
-    <p color="light" text-center margin-top class="h1-title text-center">Ingresa</p>
-    <p color="light" text-center margin-top class="h1-title text-center">tus datos</p>
+    <p color="light" text-center margin-top class="h1-title text-center">Formulario de registro</p>
   </div>
   <div class="form">
     <ion-card>
       <ion-card-header>
       </ion-card-header>
       <ion-card-content>
-        <form [formGroup]="signinForm" novalidate (ngSubmit)="onSignin(signinForm.controls)">
+        <form [formGroup]="onSignUpForm" novalidate (ngSubmit)="registro(onSignUpForm.controls)">
           <ion-list style="background-color: transparent;">
             <ion-item padding-bottom class="m-a">
               <ion-icon name="person" slot="start" color="primary"></ion-icon>
@@ -27,10 +34,6 @@
               expand="full" [disabled]="loading">
               <ion-spinner name="bubbles" padding-right slot="start" color="light" padding-left *ngIf="loading">
               </ion-spinner>
-              <p class="button-login" padding-top padding-bottom color="light">INGRESAR</p>
-            </ion-button>
-            <ion-button color="primary" padding-right padding-left routerLink="/registro" class="button button-generic" type="button" size="large"
-              expand="full" [disabled]="loading">
               <p class="button-login" padding-top padding-bottom color="light">REGISTRARSE</p>
             </ion-button>
           </ion-list>

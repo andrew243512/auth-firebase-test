@@ -30,6 +30,23 @@ export class RestApiService {
     });
   }
 
+  public signup(user: any): Observable<any> {
+    return Observable.create(observer => {
+      this.headers.append('Content-Type', 'application/json');
+      this.headers.append('Accept', 'application/json');
+      const dataBinary = { email: user.username, password: user.password };
+      this.http.post(`${RestApiService.URL_SEARCH}/signUp`, dataBinary, { headers: this.headers }).subscribe(data => {
+        if (data) {
+          observer.next(data);
+        } else {
+          observer.error('There is not data for that request, please try again.');
+        }
+      }, error => {
+        observer.error(error);
+      });
+    });
+  }
+
   public isAuthenticated(token): Observable<any> {
     return Observable.create(observer => {
       this.headers.append('Content-Type', 'application/json');

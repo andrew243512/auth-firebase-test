@@ -1,0 +1,107 @@
+app-registro{
+
+    .form{
+    margin: 31px;
+    }
+
+    .ion-margin-top, [margin-top] {
+    --margin-top: 0px !important;
+    margin-top: 0px !important;
+    }
+
+    .title {
+    margin-bottom: 30px;
+    p {
+        color: white;
+        font-size: 37px;
+        margin: auto
+    }
+    }
+
+    .button-login{
+    font-size: 21px !important;
+    font-weight: normal !important;
+    }
+
+    ion-icon {
+    font-size: 29px;
+    }
+
+    ion-item {
+    --background: rgba(0, 0, 0, 0);
+    --border-color: rgba(0,0,0,0);
+    }
+
+    ion-input {
+    --background: rgba(208, 209, 211, 0.313) !important;
+    }
+
+    .input {
+    background-color: rgba(208, 209, 211, 0.313) !important;
+    position: initial;
+    }
+
+    ion-header {
+    .back-button-icon{
+        color: black;
+    }
+    }
+
+    .toolbar {
+    .toolbar-background{
+        background: transparent;
+    }
+    }
+
+    .header-ios .toolbar-background-ios {
+    border-style: none;
+    }
+
+    .scroll-content {
+    padding-top: 50px !important;
+    }
+
+    a {
+    text-decoration: none;
+    }
+
+    .button {
+    height: 2.6rem;
+    margin-top: 20px;
+    }
+
+    .button-generic {
+    color: white;
+    // margin: 12.5px;
+    margin-right: 7.5px;
+    margin-left: 18.5px;
+    }
+
+
+    form{
+    background: none;
+    }
+
+    form > .list {
+    margin: -1px 0 16px;
+    }
+
+    .list > .item-block {
+    border: none !important;
+    }
+
+    // Tablet styles
+    @media (min-width: 576px) {
+    form {
+        button[ion-button][full], button[ion-button][block] {
+        font-size: 1.7rem;
+        height: 4rem;
+        margin-top: 1.5rem !important;
+        }
+    }
+    h1 {
+        font-size: 2.3rem;
+    }
+    
+    }
+}
