@@ -47,16 +47,13 @@ export class LoginPage implements OnInit, OnDestroy {
     }
   }
 
-  onSignin({ username, password }) {
+  onSignin() {
     this.loading = true;
-    const email = username.value.toLowerCase();
-    const pass = password.value;
-
-    if (!username.valid) {
+    if (!this.signinForm.value.username.valid) {
       this.loading = false;
       return this.showErrorMessage(LoginPage.TEXTS.INVALID_EMAIL);
     }
-    if (!password.valid) {
+    if (!this.signinForm.value.password.valid) {
       this.loading = false;
       return this.showErrorMessage(LoginPage.TEXTS.PASSWORD_REQUIRED);
     }

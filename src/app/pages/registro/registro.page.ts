@@ -47,16 +47,13 @@ export class RegistroPage implements OnInit, OnDestroy {
     }
   }
 
-  registro({ username, password }) {
+  registro() {
     this.loading = true;
-    const email = username.value.toLowerCase();
-    const pass = password.value;
-
-    if (!username.valid) {
+    if (!this.onSignUpForm.value.username.valid) {
       this.loading = false;
       return this.showErrorMessage(RegistroPage.TEXTS.INVALID_EMAIL);
     }
-    if (!password.valid) {
+    if (!this.onSignUpForm.value.password.valid) {
       this.loading = false;
       return this.showErrorMessage(RegistroPage.TEXTS.PASSWORD_REQUIRED);
     }

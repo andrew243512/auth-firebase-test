@@ -1,7 +1,8 @@
 {
   "name": "auth-firebase-test",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
