@@ -49,11 +49,11 @@ export class LoginPage implements OnInit, OnDestroy {
 
   onSignin() {
     this.loading = true;
-    if (!this.signinForm.value.username.valid) {
+    if (!this.signinForm.controls.username.valid) {
       this.loading = false;
       return this.showErrorMessage(LoginPage.TEXTS.INVALID_EMAIL);
     }
-    if (!this.signinForm.value.password.valid) {
+    if (!this.signinForm.controls.password.valid) {
       this.loading = false;
       return this.showErrorMessage(LoginPage.TEXTS.PASSWORD_REQUIRED);
     }
