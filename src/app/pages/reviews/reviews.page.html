@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Review</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Reviews for {{business && business.name ? business.name : 'Business'}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <img class="business-img" [src]="business && business.image_url ? business.image_url : '../../assets/img/gray-rect.png'" />
+    <ion-card-header>
+      <ion-card-title>{{business && business.name ? business.name : 'Business'}}</ion-card-title>
+      <ion-card-subtitle>Global Rating: {{business && business.rating ? business.rating : 'No rating'}}</ion-card-subtitle>
+      <ion-card-subtitle>Category: {{business && business.categories && business.categories[0] && business.categories[0].title ? business.categories[0].title : 'No information'}}</ion-card-subtitle>
+      <p>Phone: {{business && business.display_phone ? business.display_phone : 'No phone number available'}}</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-list *ngIf="reviews" >
+    <ion-item *ngFor="let rev of reviews">
+      <ion-avatar slot="start">
+        <img class="img-label" [src]="rev.user.image_url">
+      </ion-avatar>
+      <ion-label>
+        <h3 class="name-label">
+         {{rev.user.name}}
+        </h3>
+        <p class="review-label">
+          Review: {{rev.text}}
+        </p>
+        <p class="rating-label">
+          Rating: {{rev.rating}}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-content class="background">
+  <img class="logo" src="../../../assets/img/login.png">
+  <div class="title">
+    <p color="light" text-center margin-top class="h1-title text-center">Ingresa</p>
+    <p color="light" text-center margin-top class="h1-title text-center">tus datos</p>
+  </div>
+  <div class="form">
+    <ion-card>
+      <ion-card-header>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="signinForm" novalidate (ngSubmit)="onSignin(signinForm.controls)">
+          <ion-list style="background-color: transparent;">
+            <ion-item padding-bottom class="m-a">
+              <ion-icon name="person" slot="start" color="light"></ion-icon>
+              <ion-input class="input" class="m-a ion-text-center" required color="dark" margin-top type="email"
+                placeholder="Email" formControlName="username">
+              </ion-input>
+            </ion-item>
+            <ion-item padding-bottom class="m-a">
+              <ion-icon name="lock-closed-outline" slot="start" color="light"></ion-icon>
+              <ion-input class="input" class="m-a ion-text-center" required color="dark" margin-top type="password"
+                placeholder="Contraseña" formControlName="password">
+              </ion-input>
+            </ion-item>
+            <ion-button color="primary" padding-right padding-left class="button button-generic" type="submit" size="large"
+              expand="full" [disabled]="loading">
+              <ion-spinner name="bubbles" padding-right slot="start" color="light" padding-left *ngIf="loading">
+              </ion-spinner>
+              <p class="button-login" padding-top padding-bottom color="light">INGRESAR</p>
+            </ion-button>
+          </ion-list>
+        </form>
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+</ion-content>

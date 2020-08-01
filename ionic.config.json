@@ -1,0 +1,7 @@
+{
+  "name": "auth-firebase-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
