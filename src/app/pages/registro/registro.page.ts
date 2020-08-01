@@ -49,11 +49,11 @@ export class RegistroPage implements OnInit, OnDestroy {
 
   registro() {
     this.loading = true;
-    if (!this.onSignUpForm.value.username.valid) {
+    if (!this.onSignUpForm.controls.username.valid) {
       this.loading = false;
       return this.showErrorMessage(RegistroPage.TEXTS.INVALID_EMAIL);
     }
-    if (!this.onSignUpForm.value.password.valid) {
+    if (!this.onSignUpForm.controls.password.valid) {
       this.loading = false;
       return this.showErrorMessage(RegistroPage.TEXTS.PASSWORD_REQUIRED);
     }
